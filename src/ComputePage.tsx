@@ -10,21 +10,25 @@ import ComputeForm from './nillion/components/ComputeForm';
 import ConnectionInfo from './nillion/components/ConnectionInfo';
 
 export default function Main() {
-  const programName = 'secret_addition';
-  const outputName = 'my_output';
-  const partyName = 'Party1';
+  const programName = 'geo_group';
+  const outputName = 'location';
+  const partyName = 'user';
   const [userkey, setUserKey] = useState<string | null>(null);
   const [client, setClient] = useState<NillionClient | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [partyId, setPartyId] = useState<string | null>(null);
   const [storeId_my_int1, setStoreId_my_int1] = useState<string | null>(null);
   const [storeId_my_int2, setStoreId_my_int2] = useState<string | null>(null);
+  const [storeParty, setStoreParty] = useState<string | null>(null);
   const [programId, setProgramId] = useState<string | null>(null);
   const [additionalComputeValues, setAdditionalComputeValues] =
     useState<NadaValues | null>(null);
   const [computeResult, setComputeResult] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log(client)
+    console.log(client?.party_id)
+
     if (userkey && client) {
       setUserId(client.user_id);
       setPartyId(client.party_id);
@@ -61,9 +65,9 @@ export default function Main() {
       <h1>3. Store Secrets {storeId_my_int1 && storeId_my_int2 && ' ✅'}</h1>
       {userId && programId && (
         <>
-          <h2>Store my_int1 {storeId_my_int1 && ' ✅'}</h2>
+          <h2>Store lat {storeId_my_int1 && ' ✅'}</h2>
           <StoreSecretForm
-            secretName={'my_int1'}
+            secretName={'lat'}
             onNewStoredSecret={(secret) => setStoreId_my_int1(secret.storeId)}
             nillionClient={client}
             secretType="SecretInteger"
@@ -74,10 +78,22 @@ export default function Main() {
             defaultProgramIdForComputePermissions={programId}
           />
 
-          <h2>Store my_int2 {storeId_my_int2 && ' ✅'}</h2>
+          <h2>Store long {storeId_my_int2 && ' ✅'}</h2>
           <StoreSecretForm
-            secretName={'my_int2'}
+            secretName={'lng'}
             onNewStoredSecret={(secret) => setStoreId_my_int2(secret.storeId)}
+            nillionClient={client}
+            secretType="SecretInteger"
+            isLoading={false}
+            itemName=""
+            hidePermissions
+            defaultUserWithComputePermissions={userId}
+            defaultProgramIdForComputePermissions={programId}
+          />
+          <h2>Store rank {1 && ' ✅'}</h2>
+          <StoreSecretForm
+            secretName={'rank'}
+            onNewStoredSecret={(secret) => setStoreParty(secret.storeId)}
             nillionClient={client}
             secretType="SecretInteger"
             isLoading={false}
@@ -102,7 +118,7 @@ export default function Main() {
             additionalComputeValues={additionalComputeValues}
             storeIds={[storeId_my_int1, storeId_my_int2]}
             inputParties={[{ partyName, partyId }]}
-            outputParties={[{ partyName, partyId }]}
+            outputParties={[{ partyName: 'connection', partyId }]}
             outputName={outputName}
             onComputeProgram={(result) => setComputeResult(result.value)}
           />

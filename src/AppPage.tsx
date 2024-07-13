@@ -1,17 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MapPin, Search, Users, Edit2, ChevronDown, ChevronUp, Move } from 'lucide-react';
 import { Connections } from './Connections';
+import { MapComponent } from './Map';
 
 // Placeholder for UI components
 const Alert = ({ children }: any) => (
   <div className="bg-gray-800 border border-cyan-500 rounded-lg p-4 mb-4">{children}</div>
-);
-
-// Placeholder for map component
-const MapComponent = ({ center, zoom }: any) => (
-  <div className="bg-gray-700 h-full flex items-center justify-center">
-    <p>Map Component (Lat: {center?.lat?.toFixed(4)}, Lng: {center?.lng?.toFixed(4)}, Zoom: {zoom})</p>
-  </div>
 );
 
 // Placeholder for Worldcoin authentication
@@ -85,16 +79,16 @@ const MainApp = () => {
       <main className="p-4">
         {renderContent()}
       </main>
-      <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 p-2">
+      <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 p-4">
         <div className="flex justify-around">
           <button onClick={() => setActiveTab('profile')} className="text-cyan-300 hover:text-cyan-100">
-            <MapPin size={24} />
+            <MapPin size={30} />
           </button>
           <button onClick={() => setActiveTab('connections')} className="text-cyan-300 hover:text-cyan-100">
-            <Users size={24} />
+            <Users size={30} />
           </button>
           <button onClick={() => setActiveTab('search')} className="text-cyan-300 hover:text-cyan-100">
-            <Search size={24} />
+            <Search size={30} />
           </button>
         </div>
       </nav>
@@ -135,8 +129,8 @@ const UserProfile = ({ coordinates }: any) => (
       <h3 className="font-bold">Current Location</h3>
       <p>{coordinates ? `Lat: ${coordinates.lat?.toFixed(4)}, Lng: ${coordinates.lng?.toFixed(4)}` : 'Location not available'}</p>
     </Alert>
-    <div className="h-64 bg-gray-800 rounded-lg overflow-hidden mt-4">
-      {coordinates && <MapComponent center={coordinates} zoom={13} />}
+    <div className="h-96 bg-gray-800 rounded-lg overflow-hidden mt-4">
+      {coordinates && <MapComponent long={coordinates?.lng} lat={coordinates?.lat} zoom={13} />}
     </div>
   </div>
 );
