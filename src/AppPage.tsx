@@ -2,6 +2,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { MapPin, Search, Users, Edit2, ChevronDown, ChevronUp, Move } from 'lucide-react';
 import { Connections } from './Connections';
 import { MapComponent } from './Map';
+import { Menu } from 'lucide-react';
+
+const Logo = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-8 h-8 mr-2">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan-400" />
+    <path d="M50 5 L95 50 L50 95 L5 50 Z" fill="none" stroke="currentColor" strokeWidth="2" className="text-fuchsia-400" />
+    <circle cx="50" cy="50" r="5" fill="currentColor" className="text-fuchsia-400" />
+    <path d="M50 20 Q70 50 50 80 Q30 50 50 20" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan-400" />
+  </svg>
+);
 
 // Placeholder for UI components
 const Alert = ({ children }: any) => (
@@ -70,11 +80,16 @@ const MainApp = () => {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-      <header className="p-4 border-b border-cyan-500 flex justify-between items-center">
-        <div className="flex items-center">
-          <div className="w-8 h-8 bg-cyan-500 rounded-full mr-2"></div>
-          <h1 className="text-2xl font-bold text-cyan-300">GeoNada</h1>
-        </div>
+      <header className="p-4 bg-gray-800 flex justify-between items-center">
+        <h1 className="text-2xl font-bold flex items-center">
+          <Logo />
+          GeoTrust
+        </h1>
+        {isLoggedIn && (
+          <nav>
+            <Menu className="text-cyan-400 cursor-pointer" onClick={() => {/* Toggle menu */ }} />
+          </nav>
+        )}
       </header>
       <main className="p-4">
         {renderContent()}
