@@ -1,0 +1,102 @@
+[
+    {
+        "from": "Asha",
+        "to": "John",
+        "rank": 1
+    },
+    {
+        "from": "John",
+        "to": "Otto",
+        "rank": 2
+    },
+    {
+        "from": "Otto",
+        "to": "John",
+        "rank": 1
+    },
+    {
+        "from": "Otto",
+        "to": "Asha",
+        "rank": 1
+    },
+    {
+        "from": "Otto",
+        "to": "User4",
+        "rank": 3
+    },
+    {
+        "from": "Asha",
+        "to": "Otto",
+        "rank": 1
+    },
+    {
+        "from": "Asha",
+        "to": "User6",
+        "rank": 2
+    },
+    {
+        "from": "Asha",
+        "to": "User7",
+        "rank": 3
+    },
+    {
+        "from": "User7",
+        "to": "User8",
+        "rank": 1
+    },
+    {
+        "from": "Asha",
+        "to": "User9",
+        "rank": 2
+    },
+    {
+        "from": "User9",
+        "to": "User10",
+        "rank": 3
+    },
+    {
+        "from": "User10",
+        "to": "Asha",
+        "rank": 1
+    },
+    {
+        "from": "User10",
+        "to": "User2",
+        "rank": 2
+    },
+    {
+        "from": "User3",
+        "to": "User7",
+        "rank": 1
+    },
+    {
+        "from": "User4",
+        "to": "User6",
+        "rank": 2
+    },
+    {
+        "from": "User5",
+        "to": "User8",
+        "rank": 3
+    },
+    {
+        "from": "User6",
+        "to": "User9",
+        "rank": 1
+    },
+    {
+        "from": "User7",
+        "to": "User10",
+        "rank": 2
+    },
+    {
+        "from": "User8",
+        "to": "User5",
+        "rank": 3
+    },
+    {
+        "from": "User9",
+        "to": "Otto",
+        "rank": 1
+    }
+]

@@ -58,6 +58,7 @@ const StoreProgram: React.FC<StoreProgramProps> = ({
 
   // programs need to have .nada.bin files in public/programs/*
   const selectProgram = [
+    { name: 'secret_addition.nada.bin', value: 'secret_addition' },
     { name: 'addition_simple.nada.bin', value: 'addition_simple' },
     { name: 'subtraction_simple.nada.bin', value: 'subtraction_simple' },
   ];
@@ -204,11 +205,11 @@ const StoreProgram: React.FC<StoreProgramProps> = ({
             listItems={
               programId
                 ? [
-                    {
-                      displayText: `program id: ${programId}`,
-                      copyText: programId,
-                    },
-                  ]
+                  {
+                    displayText: `program id: ${programId}`,
+                    copyText: programId,
+                  },
+                ]
                 : []
             }
           />

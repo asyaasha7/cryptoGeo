@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import OperationsPage from './OperationsPage';
 import ComputePage from './ComputePage';
+import AppPage from './AppPage';
 import Layout from './Layout';
 import './styles/tailwind.css'; // Import Tailwind CSS
 import './styles/style.css'; // Import custom CSS
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/compute',
         element: <ComputePage />,
+      },
+      {
+        path: '/app',
+        element: <AppPage />,
       },
       {
         path: '/',
