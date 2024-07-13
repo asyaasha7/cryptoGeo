@@ -13,7 +13,7 @@ export const MapComponent = ({ long, lat, zoom }) => {
 
     // Define an array of marker objects with latitude, longitude, and description
     const markers = [
-        { id: 1, longitude: long, latitude: lat, description: 'Asha' },
+        { id: 1, longitude: long || 50.833133340982464, latitude: lat || 4.327732973338581, description: 'Asha' },
         { id: 2, longitude: -74.006, latitude: 40.7128, description: 'John' },
         { id: 3, longitude: -0.1276, latitude: 51.5074, description: 'Otto' },
     ];
