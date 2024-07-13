@@ -151,7 +151,7 @@ const UserProfile = ({ coordinates }: any) => (
       <p>{coordinates ? `Lat: ${coordinates.lat?.toFixed(4)}, Lng: ${coordinates.lng?.toFixed(4)}` : 'Location not available'}</p>
     </Alert>
     <div className="h-96 bg-gray-800 rounded-lg overflow-hidden mt-4">
-      {coordinates && <MapComponent long={coordinates?.lng} lat={coordinates?.lat} zoom={13} />}
+      {coordinates?.lng && <MapComponent long={coordinates?.lng} lat={coordinates?.lat} zoom={9} />}
     </div>
   </div>
 );
