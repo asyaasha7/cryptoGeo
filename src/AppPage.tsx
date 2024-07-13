@@ -132,8 +132,14 @@ const UserProfile = ({ coordinates }: any) => (
   <div>
     <h2 className="text-xl font-bold mb-4 text-cyan-300">User Profile</h2>
     <div className="bg-gray-900 p-4 rounded-lg mb-4 flex items-center">
-      <div className="w-24 h-24 bg-cyan-500 rounded-full mr-4 flex items-center justify-center">
-        <span className="text-black text-2xl font-bold">CU</span>
+      <div className="w-24 h-24 bg-green-400 rounded-full mr-8 flex items-center justify-center overflow-hidden">
+        <svg viewBox="0 0 100 100" className="w-full h-full">
+          <circle cx="50" cy="30" r="20" fill="#1a1a1a" />
+          <rect x="30" y="55" width="40" height="40" fill="#1a1a1a" />
+          <circle cx="35" cy="25" r="5" fill="#4ade80" />
+          <circle cx="65" cy="25" r="5" fill="#4ade80" />
+          <rect x="40" y="70" width="20" height="5" fill="#4ade80" />
+        </svg>
       </div>
       <div>
         <p className="text-lg font-bold">Asha</p>
