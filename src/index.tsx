@@ -26,12 +26,12 @@ const router = createBrowserRouter([
         element: <ComputePage />,
       },
       {
-        path: '/app',
-        element: <AppPage />,
+        path: '/operations',
+        element: <OperationsPage />,
       },
       {
         path: '/',
-        element: <OperationsPage />,
+        element: <AppPage />,
       },
     ],
   },
